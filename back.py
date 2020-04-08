@@ -4,14 +4,14 @@ mov_ls = []
 def get_deets(name,year,rp):
     if(rp == 1):
         mov_ls = []
-        deets = get_url("http://www.omdbapi.com/?apikey=56069cac&s="+name)
+        deets = get_url("http://www.omdbapi.com/?apikey=[Your API Key]&s="+name)
         js = json.loads(deets)
         for i in range (len(js['Search'])):
             if(str(js['Search'][i]['Type']) != 'game'):
                 mov_ls.append(str(js['Search'][i]['Title'])+ "--" + str(js['Search'][i]['Year']) + "--"+str(js['Search'][i]['Type']))
         return mov_ls
     elif(rp == 2 and year != -1):
-        deets = get_url("http://www.omdbapi.com/?apikey=56069cac&t=" + name + "&y=" + year)
+        deets = get_url("http://www.omdbapi.com/?apikey=[Your API Key]&t=" + name + "&y=" + year)
         js = json.loads(deets)
         return get_str(js)
 
