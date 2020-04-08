@@ -24,14 +24,15 @@ def new_markup():
 @bot.message_handler(commands=['start'])
 def start(message):
     chatid = message.chat.id
-    text = 'hello Type the movie name'
+    name = message.chat.first_name
+    text = 'Hi ' + str(name) + ', How are you ?! 😊 Welcome to TV BOT 😍🔥'
     bot.send_message(chatid, text)
 
 
 @bot.message_handler(commands=['help'])
 def help_text(message):
     chatid = message.chat.id
-    text = 'To find the details of the movie, just type it in.'
+    text = 'Just Type the movie [OR] series name and then the select your choice from list(based on the entered text) to get info about the same'
     bot.send_message(chatid, text)
 
 @bot.message_handler(func=lambda message: True)
