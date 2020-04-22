@@ -7,7 +7,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import time
 
 
-TOKEN = '1030716581:AAGQ4bH6tdmyugKBx7c_SsaLJI-3L0jr9KY'
+TOKEN = 'Bot Token'
 bot = telebot.TeleBot(TOKEN)
 chat_id = 0
 global text
@@ -131,7 +131,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://glacial-lake-50875.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='your heroku app link' + TOKEN)
     return "!!!!!!!",200
 
 
